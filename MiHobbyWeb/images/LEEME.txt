@@ -1,0 +1,13 @@
+Esta carpeta es donde debes guardar tus fotos reales (Paso 9 del taller).
+
+Por ahora la galería y el inicio usan iconos y una ilustración dibujada en
+código (SVG) porque no tenemos fotos tuyas todavía.
+
+Cuando tengas tus fotos:
+1. Guárdalas aquí, por ejemplo: images/entrenamiento.jpg
+2. En index.html, dentro de cada <div class="gallery-icon">emoji</div>
+   reemplázalo por: <img src="images/entrenamiento.jpg" alt="Descripción de la foto">
+3. Sube esta carpeta completa a GitHub junto con los demás archivos (Paso 13).
+
+Consejo: usa fotos horizontales de tamaño similar (por ejemplo 800x600 px)
+para que la galería se vea pareja.
