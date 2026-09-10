@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--
+  ================================================================
+  index.html
+  ------------------------------------------------------------------
+  Este archivo contiene la ESTRUCTURA del sitio (el "esqueleto").
+  Cada sección corresponde a los pasos del taller:
+    #inicio     -> Paso 4 (boceto): presentación de Miguel Ángel
+    #acerca     -> Sobre el tenis + sobre mí
+    #beneficios -> Beneficios del tenis
+    #curiosidades -> Datos curiosos (pedidos en el Paso 7)
+    #consejos   -> Consejos para quien empieza a jugar
+    #galeria    -> Galería de tarjetas (Paso 9)
+    #contacto   -> Formulario validado con JavaScript (Paso 10)
+  El diseño visual vive en styles.css y el comportamiento
+  interactivo (menú, validación, año automático) vive en script.js
+  ================================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miguel Ángel Gutiérrez | Tenis</title>
+  <meta name="description" content="Sitio personal de Miguel Ángel Gutiérrez sobre su pasión por el tenis: historia, beneficios, consejos y contacto." />
+
+  <!-- Tipografías: condensada deportiva para títulos + Inter para texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO / NAVEGACIÓN ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#inicio" class="brand">
+        <span class="brand-mark">MG</span>
+        <span class="brand-word">Miguel&nbsp;Ángel <em>· Tenis</em></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#inicio">Inicio</a>
+        <a href="#acerca">Acerca</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#consejos">Consejos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto" class="nav-cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ INICIO (Paso 4: boceto de bienvenida) ============ -->
+    <section id="inicio" class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow-line">Roland&nbsp;Garros · Cancha de arcilla</p>
+          <h1>Hola, soy<br /><span>Miguel&nbsp;Ángel Gutiérrez</span></h1>
+          <p class="hero-lede">
+            Tengo 18 años, estudio en la Universidad Santiago de Cali y el tenis
+            es lo que más me ha marcado: me abrió puertas en lo profesional y en
+            lo personal, hasta el punto de trabajar hoy en este deporte.
+          </p>
+          <div class="hero-actions">
+            <a href="#acerca" class="btn btn-primary">Conóceme mejor</a>
+            <a href="#contacto" class="btn btn-ghost">Escríbeme</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <!-- Ilustración propia en SVG: pelota de tenis con líneas de saque -->
+          <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="ball-svg">
+            <circle cx="210" cy="210" r="150" class="ball-body" />
+            <path d="M85 130 C 150 190, 150 230, 85 290" class="ball-seam" />
+            <path d="M335 130 C 270 190, 270 230, 335 290" class="ball-seam" />
+            <g class="serve-lines">
+              <line x1="20" y1="90" x2="70" y2="115" />
+              <line x1="10" y1="150" x2="65" y2="160" />
+              <line x1="10" y1="215" x2="65" y2="215" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Marcador tipo scoreboard con datos reales del Paso 4 -->
+      <div class="scoreboard">
+        <div class="score-item"><span class="score-num">18</span><span class="score-label">Años</span></div>
+        <div class="score-item"><span class="score-num">25 Jul</span><span class="score-label">Cumpleaños</span></div>
+        <div class="score-item"><span class="score-num">USC</span><span class="score-label">Universidad</span></div>
+        <div class="score-item"><span class="score-num">Tenis</span><span class="score-label">Pasión #1</span></div>
+      </div>
+    </section>
+
+    <!-- ============ ACERCA: del tenis + sobre mí ============ -->
+    <section id="acerca" class="section">
+      <div class="section-grid two-col">
+        <div>
+          <p class="kicker">Acerca del hobby</p>
+          <h2>Por qué el tenis</h2>
+          <p>
+            Trabajo en el área del tenis y es, sin duda, el deporte que más me
+            ha marcado. Me encanta enseñar, aprender y corregir: disfruto ver
+            cuando a alguien más le empieza a gustar este deporte.
+          </p>
+          <p>
+            Es un deporte muy social — se puede compartir fácilmente con otros
+            — pero también tiene su lado competitivo. A veces a algunos les
+            parece aburrido, y entiendo por qué: la clave está en saber
+            disfrutarlo, sentir las emociones que produce, ya sea saliendo con
+            todo a ganar un punto o simplemente jugando de relajo, dejando que
+            pase lo que tenga que pasar en la cancha.
+          </p>
+        </div>
+
+        <div>
+          <p class="kicker">Sobre mí</p>
+          <h2>Más allá de la cancha</h2>
+          <p>
+            Soy competidor y me destaco en la volea, pero el tenis es solo una
+            parte de quién soy. Me gustan los deportes de contacto, el
+            diseño, la tecnología y, sobre todo, la parte social: me gusta
+            saber un poco de todo y, cuando cojo confianza, me encanta reírme
+            y molestar un rato.
+          </p>
+        </div>
+      </div>
+
+      <!-- Historia personal ampliada: locución, dibujo, mentalidad, mundo social y puertas abiertas -->
+      <div class="story-block">
+        <p class="story-intro">
+          Llevo desde los 16 años como locutor y promotor de partidos de
+          tenis, y ya cumplo 7 años dibujando: dos pasiones que aprendí a
+          combinar con el deporte. Mi mayor inspiración en la cancha ha sido
+          Roger Federer.
+        </p>
+
+        <div class="story-grid">
+          <article class="story-card">
+            <div class="card-icon">🧘</div>
+            <h3>Estabilidad mental</h3>
+            <p>
+              El tenis es la estabilidad que busco: me enseña a calmarme, a
+              pensar antes de actuar y a no ahogarme aunque tenga muchos
+              recursos, sino a decidir con criterio.
+            </p>
+          </article>
+          <article class="story-card">
+            <div class="card-icon">🌎</div>
+            <h3>Un mundo social</h3>
+            <p>
+              Gracias a este deporte he conocido personas de todo el país e
+              incluso a nivel internacional, y he convivido con jugadores del
+              ranking ATP y WTA.
+            </p>
+          </article>
+          <article class="story-card">
+            <div class="card-icon">🚪</div>
+            <h3>Puertas que se abrieron</h3>
+            <p>
+              Desde el colegio conté con el patrocinio del Club Campestre
+              para mis estudios y mi carrera, lo que me ayudó a darme a
+              conocer en comunicación y en el mundo del deporte.
+            </p>
+          </article>
+        </div>
+
+        <p class="story-gratitude">
+          El tenis me ha mostrado lo bueno y lo malo, y sobre todo me enseñó
+          a estar agradecido por todo.
+        </p>
+
+        <ul class="tag-list">
+          <li>🎾 Tenis competitivo</li>
+          <li>🎙️ Locutor y promotor desde los 16</li>
+          <li>✏️ 7 años dibujando</li>
+          <li>🎨 Diseño</li>
+          <li>💻 Tecnología</li>
+          <li>🥊 Deportes de contacto</li>
+          <li>🗣️ Vida social</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ BENEFICIOS ============ -->
+    <section id="beneficios" class="section section-alt">
+      <p class="kicker">Beneficios</p>
+      <h2>Lo que el tenis me ha dado</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">🏃</div>
+          <h3>Físico</h3>
+          <p>Resistencia, velocidad y coordinación que se entrenan partido tras partido.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Mental</h3>
+          <p>Concentración y manejo de la presión: cada punto exige estar presente.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Social</h3>
+          <p>Es un deporte que se comparte fácil, ideal para parchar y conocer gente.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🏆</div>
+          <h3>Competitivo</h3>
+          <p>Me enseñó disciplina y a disfrutar tanto la victoria como el aprendizaje.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🚪</div>
+          <h3>Puertas abiertas</h3>
+          <p>El tenis me abrió oportunidades profesionales y personales muy importantes.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🗣️</div>
+          <h3>Comunicación</h3>
+          <p>Enseñar y corregir a otros me ayudó a mejorar cómo explico y me conecto con la gente.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CURIOSIDADES ============ -->
+    <section id="curiosidades" class="section">
+      <p class="kicker">Curiosidades</p>
+      <h2>Datos que quizá no sabías</h2>
+      <div class="fact-grid">
+        <div class="fact">
+          <p class="fact-num">1891</p>
+          <p>Roland&nbsp;Garros, el torneo de la cancha de arcilla, se juega en París desde finales del siglo&nbsp;XIX y es el único Grand&nbsp;Slam sobre este tipo de superficie.</p>
+        </div>
+        <div class="fact">
+          <p class="fact-num">140&nbsp;km/h</p>
+          <p>Un saque amateur bien entrenado puede superar fácilmente esta velocidad; los profesionales llegan a más del doble.</p>
+        </div>
+        <div class="fact">
+          <p class="fact-num">1&nbsp;pelota</p>
+          <p>En un partido profesional se pueden usar decenas de pelotas: la arcilla las desgasta más rápido que otras superficies.</p>
+        </div>
+        <div class="fact">
+          <p class="fact-num">+1</p>
+          <p>Para mí, cada clase que doy es también una oportunidad de aprender algo nuevo del deporte y de la persona a la que le enseño.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONSEJOS ============ -->
+    <section id="consejos" class="section section-alt">
+      <p class="kicker">Consejos</p>
+      <h2>Si estás empezando</h2>
+      <ol class="tips-list">
+        <li>
+          <span class="tip-index">01</span>
+          <div>
+            <h3>No busques pegarle duro desde el día uno</h3>
+            <p>Primero domina el control y la consistencia; la potencia llega con la técnica.</p>
+          </div>
+        </li>
+        <li>
+          <span class="tip-index">02</span>
+          <div>
+            <h3>Juega con distintos rivales</h3>
+            <p>Cada estilo te enseña algo diferente y te obliga a adaptarte.</p>
+          </div>
+        </li>
+        <li>
+          <span class="tip-index">03</span>
+          <div>
+            <h3>Aprende a disfrutar, no solo a competir</h3>
+            <p>El tenis también es parchar, reírse y compartir cancha; no todo es el marcador.</p>
+          </div>
+        </li>
+        <li>
+          <span class="tip-index">04</span>
+          <div>
+            <h3>Pide corrección técnica temprano</h3>
+            <p>Corregir malos hábitos al inicio es mucho más fácil que después de años jugando.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ GALERÍA (Paso 9) ============ -->
+    <section id="galeria" class="section">
+      <p class="kicker">Galería</p>
+      <h2>Momentos en cancha</h2>
+      <!--
+        Nota para Miguel: estas tarjetas usan iconos como marcador visual
+        porque aún no tenemos fotos reales tuyas. Cuando tengas fotos,
+        guárdalas en la carpeta /images y reemplaza cada <div class="gallery-icon">
+        por una etiqueta <img src="images/tu-foto.jpg" alt="..."> del mismo tamaño.
+      -->
+      <div class="gallery-grid">
+        <figure class="gallery-card">
+          <div class="gallery-icon">🎾</div>
+          <figcaption>
+            <h3>Entrenamiento</h3>
+            <p>Sesiones de técnica y volea en cancha de arcilla.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-icon">🏆</div>
+          <figcaption>
+            <h3>Competencia</h3>
+            <p>El lado competitivo: torneos y partidos de club.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-icon">👥</div>
+          <figcaption>
+            <h3>Clases</h3>
+            <p>Enseñando a quienes están empezando en el deporte.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-icon">🎙️</div>
+          <figcaption>
+            <h3>Comunicación</h3>
+            <p>Locución y conexión con las personas dentro y fuera de la cancha.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-icon">✏️</div>
+          <figcaption>
+            <h3>Diseño</h3>
+            <p>Dibujo y diseño, otra de mis pasiones fuera del tenis.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-icon">😄</div>
+          <figcaption>
+            <h3>Parche</h3>
+            <p>Cuando cojo confianza, sale el lado social y de recocha.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO (Paso 10: formulario validado) ============ -->
+    <section id="contacto" class="section section-alt">
+      <div class="section-grid two-col contact-grid">
+        <div>
+          <p class="kicker">Contacto</p>
+          <h2>¿Jugamos o te enseño?</h2>
+          <p>
+            Si quieres una clase, armar un partido o simplemente hablar de
+            tenis, escríbeme por aquí. Te respondo lo antes posible.
+          </p>
+        </div>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" />
+            <span class="field-error" id="error-nombre"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" />
+            <span class="field-error" id="error-correo"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntame qué necesitas..."></textarea>
+            <span class="field-error" id="error-mensaje"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <span class="brand-mark small">MG</span>
+        <p>Miguel Ángel Gutiérrez · Sitio sobre mi hobby: el tenis.</p>
+      </div>
+
+      <nav class="footer-social" aria-label="Redes sociales">
+        <!-- Reemplaza el # por tus enlaces reales -->
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </nav>
+
+      <p class="footer-note">
+        © <span id="year"></span> Miguel Ángel Gutiérrez ·
+        Proyecto académico — Construcción de Software, Universidad Santiago de Cali
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
